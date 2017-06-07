@@ -148,37 +148,17 @@ if($userData->user_business_basic_details){
           <div role="tabpanel" class="tab-pane <?php echo ($activeTab == 'bank')?'active':'';?>" id="default-tabs-0-3">
             <?= $this->Form->create(null,['url'=>$updateBankDetails]); ?>
             <div class="form-group row">
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <?= $this->Form->label('name', __('Account holder Name'), ['class' => [ 'control-label']]); ?>
                 <?= $this->Form->Input('name', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Account Holder Name', 'required'=>'required']); ?>
               </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <?= $this->Form->label('bank_name', __('Bank Name'), ['class' => [ 'control-label']]); ?>
                 <?= $this->Form->Input('bank_name', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Bank Name', 'required'=>'required']); ?>
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-12">
-                <?= $this->Form->label('account_number', __('Account Number'), ['class' => [ 'control-label']]); ?>
-                <?= $this->Form->Input('account_number', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Account Number', 'required'=>'required']); ?>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-12">
-                <?= $this->Form->label('bank_branch', __('Bank Branch'), ['class' => [ 'control-label']]); ?>
-                <?= $this->Form->Input('bank_branch', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Branch Name', 'required'=>'required']); ?>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-12">
-                <?= $this->Form->label('ifsc', __('IFSC Code'), ['class' => [ 'control-label']]); ?>
-                <?= $this->Form->Input('ifsc', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter IFSC Code', 'required'=>'required']); ?>
-              </div>
-            </div>
-            <div class="form-group row">
-              <?= $this->Form->label('account_type', __('Account Type'), ['class' => [ 'control-label col-md-12']]); ?>
+              <?= $this->Form->label('account_type', __('Account Type'), ['class' => [ 'control-label col-md-3']]); ?>
               <label class="custom-control custom-radio">
                   <input id="radio1" name="account_type" type="radio" class="custom-control-input" value="savings" checked>
                   <span class="custom-control-indicator"></span>
@@ -190,6 +170,23 @@ if($userData->user_business_basic_details){
                   <span class="custom-control-description">Current</span>
               </label>
             </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <?= $this->Form->label('account_number', __('Account Number'), ['class' => [ 'control-label']]); ?>
+                <?= $this->Form->Input('account_number', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Account Number', 'required'=>'required']); ?>
+              </div>
+              <div class="col-md-6">
+                <?= $this->Form->label('ifsc', __('IFSC Code'), ['class' => [ 'control-label']]); ?>
+                <?= $this->Form->Input('ifsc', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter IFSC Code', 'required'=>'required']); ?>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <?= $this->Form->label('bank_branch', __('Bank Branch'), ['class' => [ 'control-label']]); ?>
+                <?= $this->Form->Input('bank_branch', ['class' => 'form-control col-md-12', 'label' => false, 'placeholder' => 'Please enter Branch Name', 'required'=>'required']); ?>
+              </div>
+            </div>
+
             <div class="text-center">
               <button class="btn btn-success">Register</button>
               <button class="btn btn-default">Cancel</button>
@@ -219,9 +216,10 @@ if($userData->user_business_basic_details){
           var locality = [];
           if(r.results.length){
             if(r.results[0].address_components.length){
+              var isLocalityAvailable = false;
               for(x in r.results[0].address_components ){
                 if(r.results[0].address_components[x].types[0] == 'locality'){
-                  $('#'+base_var+'city').val(r.results[0].address_components[x].long_name);
+                  isLocalityAvailable = r.results[0].address_components[x].long_name;
                 }
                 if(r.results[0].address_components[x].types[0] == 'administrative_area_level_1'){
                   $('#'+base_var+'state').val(r.results[0].address_components[x].long_name);
@@ -229,7 +227,13 @@ if($userData->user_business_basic_details){
                 if(r.results[0].address_components[x].types[0] == 'country'){
                   $('#'+base_var+'country').val(r.results[0].address_components[x].long_name);
                 }
+                if(r.results[0].address_components[x].types[0] == 'administrative_area_level_2'){
+                  if(!isLocalityAvailable){
+                    isLocalityAvailable = r.results[0].address_components[x].long_name;
+                  }
+                }
               }
+              $('#'+base_var+'city').val(isLocalityAvailable);
             }
             return locality;
           }

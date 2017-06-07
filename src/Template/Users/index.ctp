@@ -86,23 +86,26 @@ if($userData->user_business_basic_details){
               <div class="form-group row">
                 <div class="col-md-12 col-md-offset-2">
                   <?= $this->Form->label('entity_name', __('Legal Entity Name'), ['class' => [ 'control-label']]); ?>
-                  <?= $this->Form->Input('entity_name', ['class' => '', 'label' => false, 'placeholder' => 'Please enter Legal Entity Name', 'required'=>'required']); ?>
+                  <?= $this->Form->Input('entity_name', ['class' => 'form-control', 'label' => false, 'placeholder' => 'Please enter Legal Entity Name', 'required'=>'required']); ?>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12">
                   <?= $this->Form->label('website_url', __('Website Url'), ['class' => [ 'control-label']]); ?>
-                  <?= $this->Form->Input('website_url', ['class' => '', 'label' => false, 'placeholder' => 'Please enter Website Url', 'required'=>'required']); ?>
+                  <?= $this->Form->Input('website_url', ['class' => 'form-control', 'label' => false, 'placeholder' => 'Please enter Website Url', 'required'=>'required']); ?>
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <?= $this->Form->label('adhaar_number', __('Adhaar Number'), ['class' => [ 'control-label']]); ?>
-                  <?= $this->Form->Input('adhaar_number', ['class' => '', 'label' => false, 'placeholder' => 'Please enter Adhaar Number', 'required'=>'required']); ?>
+                  <?= $this->Form->Input('adhaar_number', ['class' => 'form-control', 'label' => false, 'placeholder' => 'Please enter Adhaar Number', 'required'=>'required']); ?>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
+                  &nbsp;
+                </div>
+                <div class="col-md-4">
                   <?= $this->Form->label('business_pan_card', __('Pan Card Number'), ['class' => [ 'control-label']]); ?>
-                  <?= $this->Form->Input('business_pan_card', ['class' => '', 'label' => false, 'placeholder' => 'Please enter Pan Card Number', 'required'=>'required']); ?>
+                  <?= $this->Form->Input('business_pan_card', ['class' => 'form-control', 'label' => false, 'placeholder' => 'Please enter Pan Card Number', 'required'=>'required']); ?>
                 </div>
               </div>
               <div class="form-group row">

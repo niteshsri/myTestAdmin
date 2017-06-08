@@ -1,3 +1,5 @@
+<?php
+?>
 <div class="container-fluid">
   <div class="row">
     <div class="left-sidebar-placeholder"></div>
@@ -8,23 +10,15 @@
           <!-- sidebar-heading -->
           <div class="sidebar-heading sidebar-heading-1">
             <!-- sidebar-heading-image -->
-            <div class="sidebar-heading-image">
-              <span class="badge badge-rounded badge-danger">8</span>
-              <img src="assets/faces/m7.png" class="rounded-circle" alt="image" />
+            <div class="sidebar-heading-image" >
+              MARS LOGO here
             </div>
             <!-- end sidebar-heading-image -->
             <!-- dropdown -->
             <div class="dropdown">
               <a class="btn btn-default btn-flat dropdown-toggle no-after" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="name">
-                  Eric Simpson </div>
-                  <div class="description">
-                    Lead developer
-                  </div>
-                  <div class="location">
-                    <i class="sli-globe"></i>
-                    <span>Los Angeles, CA</span>
-                  </div>
+                  <?= $sideNavData['full_name'] ?></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-center from-center">
                   <a class="dropdown-item" href="#">
@@ -61,11 +55,9 @@
             </div>
             <!-- end sidebar-heading -->
             <div class="section">
-              <div class="section-title">
-                Menu </div>
                 <ul class="list-unstyled">
                   <li>
-                    <a href="index.html" class="btn btn-default btn-flat btn-sidebar btn-sidebar-1">
+                    <a class="btn btn-default btn-flat btn-sidebar btn-sidebar-1" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'index'])?>">
                       <i class="sli-star"></i>
                       <span class="title">Dashboard</span>
                     </a>

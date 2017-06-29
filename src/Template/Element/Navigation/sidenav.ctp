@@ -10,8 +10,9 @@
           <!-- sidebar-heading -->
           <div class="sidebar-heading sidebar-heading-1">
             <!-- sidebar-heading-image -->
-            <div class="sidebar-heading-image" >
-              MARS LOGO here
+            <div class="sidebar-heading-image">
+              <span class="badge badge-rounded badge-danger">8</span>
+              <img src="" class="rounded-circle" alt="image" />
             </div>
             <!-- end sidebar-heading-image -->
             <!-- dropdown -->
@@ -55,18 +56,38 @@
             </div>
             <!-- end sidebar-heading -->
             <div class="section">
-                <ul class="list-unstyled">
-                  <li>
-                    <a class="btn btn-default btn-flat btn-sidebar btn-sidebar-1" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'index'])?>">
-                      <i class="sli-star"></i>
-                      <span class="title">Dashboard</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="btn btn-default btn-flat btn-sidebar btn-sidebar-1" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'index'])?>">
+                    <i class="sli-star"></i>
+                    <span class="title">Dashboard</span>
+                  </a>
+                </li>
+                <li>
+                  <a data-target="#merchants-info" data-toggle="collapse" class="btn btn-default btn-flat btn-sidebar btn-sidebar-1" href="#">
+                    <i class="sli-star"></i>
+                    <span class="title">Merchants</span>
+                  </a>
+                  <ul class="list-unstyled collapse" id="merchants-info">
+                    <li>
+                      <a href="<?= $this->Url->build(['controller' => 'Merchants', 'action' => 'index'])?>" class="btn btn-default btn-flat btn-sidebar btn-sidebar-2">
+                        <i class="sli-star"></i>
+                        <span class="title">View All Merchants</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html" class="btn btn-default btn-flat btn-sidebar btn-sidebar-2">
+                        <i class="sli-star"></i>
+                        <span class="title">Verify Merchants</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

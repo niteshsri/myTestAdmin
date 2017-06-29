@@ -23,15 +23,6 @@ class UsersController extends AppController
   */
   public function index()
   {
-    $userData = $this->Users->findById($this->Auth->user('id'))->contain(['UserAddress','UserBusinessBasicDetails','UserBusinessContactDetails','BusinessBankDetails'])->first();
-    $this->loadModel('BusinessTypes');
-    $businessType = $this->BusinessTypes->find('list')->toArray();
-    $this->loadModel('BusinessCategories');
-    $businessCat = $this->BusinessCategories->find('list')->toArray();
-    $this->set(compact('userData'));
-    $this->set(compact('businessType'));
-    $this->set(compact('businessCat'));
-    $this->set('_serialize', ['userData','businessType','businessCat']);
   }
 
   /**

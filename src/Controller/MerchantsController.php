@@ -43,6 +43,7 @@ class MerchantsController extends AppController
     {
       $this->loadComponent('MerchantPanel');
       $user = $this->MerchantPanel->ViewMerchantInfo($id);
+
       if($user->status){
         $user = $user->data;
       }

@@ -42,7 +42,8 @@ use Cake\Routing\Route\DashedRoute;
  *
  */
 Router::defaultRouteClass(DashedRoute::class);
-Router::prefix('merchant_api', function (RouteBuilder $routes) {
+Router::prefix('api', function (RouteBuilder $routes) {
+    $routes->connect('/approveUserDetails',array('controller'=>'users', 'action'=>'approveUserDetails',"_method" => "POST"));
     $routes->connect('/:controller',array('controller'=>':controller', 'action'=>'add',"_method" => "POST"));
 
     $routes->connect('/:controller/:id',array('controller'=>':controller', 'action'=>'view',"_method" => "GET"), array('pass' => array('id'), 'id'=>'[\d]+')

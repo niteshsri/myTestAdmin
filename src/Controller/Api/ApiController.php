@@ -51,7 +51,7 @@ class ApiController extends Controller
     parent::initialize();
     $this->loadComponent('RequestHandler');
     $this->loadComponent('Auth', [
-      'authorize'=> 'Controller',//added this line
+      // 'authorize'=> 'Controller',//added this line
       'loginAction' => [
         'controller' => 'Users',
         'action' => 'login'

@@ -75,12 +75,6 @@
                         <span class="title">View All Merchants</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="index.html" class="btn btn-default btn-flat btn-sidebar btn-sidebar-2">
-                        <i class="sli-star"></i>
-                        <span class="title">Verify Merchants</span>
-                      </a>
-                    </li>
                   </ul>
                 </li>
               </ul>

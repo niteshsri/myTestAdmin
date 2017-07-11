@@ -46,6 +46,16 @@ class MerchantPanelComponent extends Component{
 			return FALSE;
 		}
 	}
+	public function updateMerchantInfo($id,$data)
+	{
+		$http = new Client(['headers' => ['Content-Type' => 'application/json','accept'=>'application/json']]);
+		$response = $http->put( 'http://localhost/myTestCode/merchant_api/Users/'.$id,json_encode($data));
+		if($response->isOk()){
+			return json_decode($response->body());
+		}else{
+			return FALSE;
+		}
+	}
 
 }
 ?>

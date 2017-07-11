@@ -1,7 +1,7 @@
 <nav class="navbar navbar-1">
         <div class="logo">
             <i class="sli-compass"></i>
-            <span class="title">Delta</span>
+            <span class="title">Uday</span>
         </div>
         <ul class="nav nav-inline pull-right">        
             <li class="nav-item">

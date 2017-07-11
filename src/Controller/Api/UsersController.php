@@ -68,6 +68,7 @@ class UsersController extends ApiController
     }
       $reqData['id'] = $requestData['data_m'];
       $reqData['emp_id'] = $this->Auth->user('id');
+      $reqData['bank_data']['bank_id'] = $requestData['data_id'];
       $reqData['bank_data']['is_approved'] = $requestData['data_status'];
       $reqData['bank_data']['remark'] =  (isset($requestData['data_remark']))?$requestData['data_remark']:null;
     }
@@ -77,6 +78,7 @@ class UsersController extends ApiController
     }
       $reqData['id'] = $requestData['data_m'];
       $reqData['emp_id'] = $this->Auth->user('id');
+      $reqData['bank_data']['business_id'] = $requestData['data_id'];
       $reqData['business_data']['is_approved'] = $requestData['data_status'];
       $reqData['business_data']['remark'] =  (isset($requestData['data_remark']))?$requestData['data_remark']:null;
     }

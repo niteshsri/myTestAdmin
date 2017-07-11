@@ -115,16 +115,16 @@ if($userBusinessDetails){
                     <?= $this->Form->label('state', __('State'), ['class' => [ 'control-label']]); ?>
                     <?= $this->Form->Input('state', ['value'=>$userAddress->state,'class' => '', 'label' => false, 'placeholder' => 'Please enter State','disabled'=>'disabled']); ?>
                   </div>
-                </div>
-                <div class="form-group row">
+                </div>              
+                <?php } ?>
+                  <div class="form-group row">
                 <div class="col-md-2">
-                  <button class="btn btn-secondary approve" data-status= "1" data-m="<?php echo $userProfile->id ?>" data-type="user" data-id="<?php echo $userBankDetails->id ?>">approve</button>
+                  <button class="btn btn-secondary approve" data-status= "1" data-m="<?php echo $userProfile->id ?>" data-type="user" data-id="<?php echo $userProfile->id ?>">approve</button>
                 </div>
                 <div class="col-md-2">
-                 <button class="btn btn-danger decline" data-status= "0" data-remark= "failed" data-m="<?php echo $userProfile->id ?>" data-type="user" data-id="<?php echo $userBankDetails->id ?>">Decline</button>
+                 <button class="btn btn-danger decline" data-status= "0" data-remark= "failed" data-m="<?php echo $userProfile->id ?>" data-type="user" data-id="<?php echo $userProfile->id ?>">Decline</button>
                </div>
              </div>
-                <?php } ?>
               </div>
               <div role="tabpanel" class="tab-pane" id="default-tabs-business">
                 <div class="form-group row">

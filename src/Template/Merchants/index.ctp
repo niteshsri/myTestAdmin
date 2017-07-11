@@ -47,9 +47,7 @@
                     <?= '<a href='.$this->Url->build(['action' => 'view', $user->id]).' class="btn btn-sm btn-success">' ?>
                       <i class="fa fa-eye fa-fw"></i>
                     </a>
-                    <?= '<a href='.$this->Url->build(['action' => 'edit', $user->id]).' class="btn btn-sm btn-warning"">' ?>
-                      <i class="fa fa-pencil fa-fw"></i>
-                    </a></td>
+                    </td>
                   </tr>
                   <?php } ?>
                 </tbody>

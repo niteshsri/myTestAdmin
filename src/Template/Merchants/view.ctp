@@ -190,10 +190,10 @@ if($userBusinessDetails){
                 </div>
                 <div class="form-group row">
                 <div class="col-md-2">
-                  <button class="btn btn-secondary approve"  data-status= "1" data-type="business" data-m="<?php echo $userProfile->id ?>" data-id="<?php echo $userBankDetails->id ?>">approve</button>
+                  <button class="btn btn-secondary approve"  data-status= "1" data-type="business" data-m="<?php echo $userProfile->id ?>" data-id="<?php echo $userBusinessDetails->id ?>">approve</button>
                 </div>
                 <div class="col-md-2">
-                 <button class="btn btn-danger decline"  data-status= "0" data-remark= "failed" data-type="business" data-m="<?php echo $userProfile->id ?>" data-id="<?php echo $userBankDetails->id ?>">Decline</button>
+                 <button class="btn btn-danger decline"  data-status= "0" data-remark= "failed" data-type="business" data-m="<?php echo $userProfile->id ?>" data-id="<?php echo $userBusinessDetails->id ?>">Decline</button>
                </div>
              </div>
                 <?php } ?>
